@@ -2,12 +2,14 @@
 // ref: https://umijs.org/config/
 export default {
   treeShaking: true,
+  hash: true,
   routes: [
     {
       path: '/',
       component: '../layouts/index',
       routes: [
-        { path: '/', component: '../pages/index' }
+        { path: '/', component: '../pages' },
+        { path: '/user', component: '../pages/user.js' }
       ]
     }
   ],
@@ -19,7 +21,7 @@ export default {
       dynamicImport: false,
       title: 'hello-umi',
       dll: false,
-      
+
       routes: {
         exclude: [
           /models\//,
@@ -31,4 +33,5 @@ export default {
       },
     }],
   ],
+
 }
